@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>有风小院 · 老板后台</title>
+  <link rel="stylesheet" href="/static/styles.css" />
+</head>
+<body class="admin-body">
+  <aside class="sidebar">
+    <div class="brand">有风 AI 管家</div>
+    <nav>
+      <a class="active" href="#overview">经营概览</a>
+      <a href="#faqs">店铺知识</a>
+      <a href="#messages">最近对话</a>
+      <a href="/guest" target="_blank">打开住客端 ↗</a>
+    </nav>
+    <div class="sidebar-note">V0 Demo<br/>先证明省事和赚钱，再加功能。</div>
+  </aside>
+
+  <main class="admin-main">
+    <section id="overview">
+      <div class="page-title">
+        <div>
+          <div class="eyebrow">OWNER DASHBOARD</div>
+          <h1>今天AI到底有没有用？</h1>
+        </div>
+        <div class="demo-chip">Demo 店铺</div>
+      </div>
+
+      <div class="stat-grid">
+        <div class="stat-card"><span>使用住客</span><strong id="sSessions">0</strong><small>扫码并产生会话</small></div>
+        <div class="stat-card"><span>住客提问</span><strong id="sMessages">0</strong><small>真实问题数</small></div>
+        <div class="stat-card"><span>FAQ解决</span><strong id="sFaq">0</strong><small>结构化事实回答</small></div>
+        <div class="stat-card"><span>转人工</span><strong id="sHandoff">0</strong><small>系统主动停止回答</small></div>
+        <div class="stat-card"><span>本地推荐</span><strong id="sPoi">0</strong><small>可信POI曝光</small></div>
+        <div class="stat-card"><span>体验推荐</span><strong id="sExp">0</strong><small>潜在增值收入入口</small></div>
+      </div>
+    </section>
+
+    <section id="faqs" class="panel">
+      <div class="panel-title"><h2>店铺知识</h2><span>事实必须由老板确认</span></div>
+      <div id="faqList" class="faq-list"></div>
+    </section>
+
+    <section id="messages" class="panel">
+      <div class="panel-title"><h2>最近对话</h2><span>用于发现住客真正关心什么</span></div>
+      <div id="messageList" class="message-list"></div>
+    </section>
+  </main>
+
+<script src="/static/admin.js?v=render1"></script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>住客二维码 · 有风AI管家</title>
+  <link rel="stylesheet" href="/static/styles.css" />
+  <style>
+    .qr-page{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px;background:#f4f2ec}
+    .qr-card{width:min(92vw,460px);background:#fff;border:1px solid #e5e4dd;border-radius:28px;padding:32px;text-align:center;box-shadow:0 18px 60px rgba(25,40,34,.10)}
+    .qr-card h1{font-size:26px;margin:8px 0 10px}
+    .qr-card p{color:#6b756f;line-height:1.7;font-size:14px}
+    .qr-img{width:260px;height:260px;max-width:78vw;border-radius:18px;border:1px solid #ecebe5;margin:18px auto;display:block}
+    .qr-url{font-size:12px;color:#8a928d;word-break:break-all;background:#fafaf7;padding:10px 12px;border-radius:10px}
+    .qr-actions{display:flex;gap:10px;justify-content:center;margin-top:16px;flex-wrap:wrap}
+    .qr-actions a,.qr-actions button{border:0;border-radius:12px;padding:10px 14px;text-decoration:none;cursor:pointer}
+    .primary{background:#17211d;color:white}.secondary{background:#e8f1ed;color:#2c6552}
+  </style>
+</head>
+<body>
+  <main class="qr-page">
+    <section class="qr-card">
+      <div class="eyebrow">ROOM / FRONT DESK QR</div>
+      <h1>扫码进入「AI在地管家」</h1>
+      <p>云端部署后，这张二维码会自动指向你的公开住客页面。可以直接拿给民宿老板或住客扫码。</p>
+      <img id="qrImg" class="qr-img" alt="住客端二维码" />
+      <div id="guestUrl" class="qr-url"></div>
+      <div class="qr-actions">
+        <a class="primary" href="/guest" target="_blank">打开住客端</a>
+        <a class="secondary" href="/admin" target="_blank">打开老板后台</a>
+        <button class="secondary" id="copyBtn">复制链接</button>
+      </div>
+    </section>
+  </main>
+<script>
+const guestUrl = `${location.origin}/guest`;
+document.getElementById("qrImg").src = `/api/qr?target=${encodeURIComponent(guestUrl)}`;
+document.getElementById("guestUrl").textContent = guestUrl;
+document.getElementById("copyBtn").onclick = async () => {
+  await navigator.clipboard.writeText(guestUrl);
+  document.getElementById("copyBtn").textContent = "已复制";
+};
+</script>
+</body>
+</html>

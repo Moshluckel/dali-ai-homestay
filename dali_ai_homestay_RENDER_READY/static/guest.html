@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>有风小院 · AI在地管家</title>
+  <link rel="stylesheet" href="/static/styles.css" />
+</head>
+<body class="guest-body">
+  <main class="phone-shell">
+    <header class="guest-header">
+      <div>
+        <div class="eyebrow">DALI LOCAL CONCIERGE</div>
+        <h1 id="hotelName">有风小院</h1>
+        <p>住在这里，有事问我。店里的事我按店规回答，大理的事只推荐我们核实过的。</p>
+      </div>
+      <div class="status-dot-wrap"><span class="status-dot"></span>在线</div>
+    </header>
+
+    <section class="quick-grid">
+      <button data-q="Wi-Fi 密码是什么？">🏠<span>问民宿</span><small>Wi-Fi / 早餐 / 停车</small></button>
+      <button data-q="两个女生，附近有什么安静一点的咖啡馆？">🌊<span>去哪玩</span><small>按时间和人群推荐</small></button>
+      <button data-q="附近有什么适合两个人吃晚饭的地方？">🍜<span>吃什么</span><small>少而准的本地清单</small></button>
+      <button data-q="明天下午想做点特别的，有什么体验？">✨<span>特别体验</span><small>非遗 / 骑行 / 跟拍</small></button>
+    </section>
+
+    <section id="chat" class="chat">
+      <div class="bubble assistant">
+        <div class="avatar">风</div>
+        <div>
+          <p>晚上好。你可以直接告诉我：几个人、什么时候、预算多少、喜欢热闹还是安静，我会尽量给你少而准的建议。</p>
+          <span class="source">AI在地管家 · Demo</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="composer">
+      <input id="messageInput" placeholder="比如：明天下雨，带老人去哪比较轻松？" autocomplete="off" />
+      <button id="sendBtn">发送</button>
+    </section>
+
+    <footer>
+      <span>回答不确定时会转人工，不代表民宿作退款/赔偿等承诺。</span>
+    </footer>
+  </main>
+
+<script src="/static/guest.js?v=render1"></script>
+</body>
+</html>
